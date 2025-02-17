@@ -11,20 +11,7 @@ import org.openrndr.color.ColorRGBa
 import org.openrndr.dokgen.annotations.*
 import kotlin.random.Random
 
-/**
- * The `main` function demonstrates how to work with lists in Kotlin and showcases rendering
- * text elements from a list using the OPENRNDR framework.
- *
- * This function performs the following actions:
- * - Creates and utilizes a list of strings.
- * - Configures an application canvas with specified dimensions.
- * - Visualizes the list contents as rendered text on a canvas, applying transformations and
- *   colors for styling.
- * - Captures screenshots of the resulting render for documentation or visual reference.
- *
- * The function is annotated to provide textual descriptions, application configuration,
- * code snippets, and generated screenshots.
- */
+
 fun main() {
     @Text
     """
