@@ -2,7 +2,7 @@
 @file:Title("Lists")
 @file:ParentTitle("Repeating things")
 @file:Order("100")
-@file:URL("kotlinLanguageAndTools/kotlin")
+@file:URL("repeating-things/lists")
 
 package docs.`10_Repeating_things`
 

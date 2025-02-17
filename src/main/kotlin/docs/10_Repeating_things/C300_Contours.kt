@@ -1,5 +1,7 @@
+@file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Contours")
 @file:ParentTitle("Repeating things")
+@file:Order("300")
 @file:URL("repeating-things/contours")
 
 package docs.`10_Repeating_things`
