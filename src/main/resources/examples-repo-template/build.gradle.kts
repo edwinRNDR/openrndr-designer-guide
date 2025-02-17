@@ -66,6 +66,8 @@ val orxFeatures = setOf<String>(
 //  "orx-turtle",
     "orx-video-profiles",
     "orx-view-box",
+    "orx-text-writer",
+    "orx-svg"
 )
 
 /** ## additional ORML features to be added to this project */
@@ -287,7 +289,7 @@ class Openrndr {
             implementation(openrndr("openal"))
             runtimeOnly(openrndrNatives("openal"))
             implementation(openrndr("application"))
-            implementation(openrndr("svg"))
+//            implementation(openrndr("svg"))
             implementation(openrndr("animatable"))
             implementation(openrndr("extensions"))
             implementation(openrndr("filter"))
