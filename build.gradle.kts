@@ -16,7 +16,9 @@ dependencies {
     implementation(libs.bundles.openrndr.core)
     implementation(libs.bundles.openrndr.rest)
     implementation(libs.bundles.orx)
+    runtimeOnly("org.openrndr:openrndr-gl3-natives-macos-arm64:${libs.versions.openrndr.get()}")
     implementation(libs.dokgen) {
+
         // Otherwise includes Gradle's slf4j implementation
         isTransitive = false
     }

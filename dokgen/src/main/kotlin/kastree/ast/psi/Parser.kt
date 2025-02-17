@@ -10,6 +10,7 @@ import org.jetbrains.kotlin.com.intellij.openapi.util.Disposer
 import org.jetbrains.kotlin.com.intellij.psi.PsiErrorElement
 import org.jetbrains.kotlin.com.intellij.psi.PsiManager
 import org.jetbrains.kotlin.com.intellij.testFramework.LightVirtualFile
+import org.jetbrains.kotlin.config.CommonConfigurationKeys
 import org.jetbrains.kotlin.config.CompilerConfiguration
 import org.jetbrains.kotlin.idea.KotlinFileType
 import org.jetbrains.kotlin.psi.*
@@ -31,7 +32,7 @@ open class Parser(val converter: Converter = Converter) {
         val compilerConfiguration = CompilerConfiguration()
         val messageCollector = DummyCollector()
 
-        compilerConfiguration.put(CLIConfigurationKeys.MESSAGE_COLLECTOR_KEY, messageCollector)
+        compilerConfiguration.put(CommonConfigurationKeys.MESSAGE_COLLECTOR_KEY, messageCollector)
         val kce =
                 try {
                     KotlinCoreEnvironment.createForProduction(
