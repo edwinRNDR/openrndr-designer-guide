@@ -1,7 +1,7 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Kotlin language and tools")
+@file:Title("Repeating things")
 @file:Order("1020")
-@file:URL("kotlinLanguageAndTools/index")
+@file:URL("repeating-things/index")
 
 package docs.`10_Repeating_things`
 
