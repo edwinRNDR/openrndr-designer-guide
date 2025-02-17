@@ -1,10 +1,10 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Introduction to Kotlin")
-@file:ParentTitle("Kotlin language and tools")
+@file:Title("Lists")
+@file:ParentTitle("Repeating things")
 @file:Order("100")
 @file:URL("kotlinLanguageAndTools/kotlin")
 
-package docs.`10_Kotlin_lang_and_tools`
+package docs.`10_Repeating_things`
 
 import org.openrndr.application
 import org.openrndr.color.ColorRGBa
@@ -15,7 +15,7 @@ import kotlin.random.Random
 fun main() {
     @Text
     """
-    # Working with Lists in Kotlin
+    # Working with Lists in OPENRNDR
     """
 
     @Text
@@ -98,10 +98,8 @@ fun main() {
         }
         program {
             val texts = listOf("First", "Second", "Third")
-            val colors = listOf(ColorRGBa.PINK, ColorRGBa.GREEN, ColorRGBa.BLUE)
+            val colors = listOf(ColorRGBa.PINK, ColorRGBa.GREEN, ColorRGBa.RED)
             extend {
-                drawer.translate(30.0, 200.0)
-
                 // create a random number generator with seed 0
                 // this makes sure that we draw the exact same sequence every time
                 val rng = Random(0)
@@ -109,8 +107,7 @@ fun main() {
                 for (i in 0 until 10) {
                     val text = texts.random(rng)
                     drawer.fill = colors.random(rng)
-                    drawer.text(text)
-                    drawer.translate(30.0, i * 30.0 + 50.0)
+                    drawer.text(text, 30.0, i * 30.0 + 50.0)
                 }
             }
         }
