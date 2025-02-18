@@ -29,8 +29,6 @@ fun main() {
     """
     ## Simple composition
 
-
-
     """.trimIndent()
 
     @Media.Image "../media/layered-graphics-001.png"
@@ -46,32 +44,34 @@ fun main() {
         program {
 
             val c = compose {
+                // first layer with a checkers pattern
                 layer {
-
                     post(Checkers())
+                }
 
-                    layer {
+                // a base layer
+                layer {
+                    // here we can potentially place initialization code
+                    draw {
+                        drawer.fill = ColorRGBa.RED
+                        drawer.circle(drawer.bounds.center, 100.0)
+                    }
+                }
+                // a layer on top of the base layer
+                layer {
+                    draw {
+                        drawer.fill = ColorRGBa.BLUE
+                        drawer.circle(drawer.bounds.center + Vector2(25.0, 25.0), 100.0)
+                    }
 
-                        draw {
-                            drawer.fill = ColorRGBa.RED
-                            drawer.circle(drawer.bounds.center, 100.0)
-                        }
-                    }
-                    layer {
-                        draw {
-                            drawer.fill = ColorRGBa.BLUE
-                            drawer.circle(drawer.bounds.center + Vector2(25.0, 25.0), 100.0)
-                        }
-                        blend(Multiply())
-                    }
+                    // enable multiply blending for this layer
+                    blend(Multiply())
                 }
             }
 
             extend {
                 c.draw(drawer)
-
             }
         }
     }
-
 }

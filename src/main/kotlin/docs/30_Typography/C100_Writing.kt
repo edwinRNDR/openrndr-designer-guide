@@ -24,9 +24,6 @@ fun main() {
     @Text
     """
     ## Text in a box
-
-
-
     """.trimIndent()
 
     @Media.Image "../media/writing-001.png"
@@ -97,6 +94,7 @@ Tracking controls the horizontal spacing between characters. Leading controls th
 Tracking controls the horizontal spacing between characters. Leading controls the vertical spacing between lines.
     """.trimIndent()
     @Media.Image "../media/writing-003.png"
+
     @Application
     @ProduceScreenshot("media/writing-003.png")
     @Code

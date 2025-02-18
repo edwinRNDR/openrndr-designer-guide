@@ -27,6 +27,8 @@ fun main() {
     """
     ## Contour of a text
 
+    Get shapes and contours of text and use `.sub` do draw only a subsection of it. 
+
     """.trimIndent()
 
     @Media.Video "../media/advanced-type-001.mp4"
