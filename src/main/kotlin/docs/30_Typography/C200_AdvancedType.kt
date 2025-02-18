@@ -1,7 +1,7 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Writing")
+@file:Title("Advanced type")
 @file:ParentTitle("Typography")
-@file:Order("100")
+@file:Order("200")
 @file:URL("typography/advancedType")
 
 package docs.`30_Typography`
