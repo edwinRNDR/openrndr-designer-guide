@@ -20,7 +20,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: OPENRNDR GUIDE
+title: OPENRNDR DESIGNER GUIDE
 email: info@openrndr.org
 description: >- # this means to ignore newlines until "baseurl:"
   Guide for OPENRNDR

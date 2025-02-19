@@ -52,12 +52,11 @@ fun main() {
 
     @Media.Image "../media/writing-002.png"
 
-
     @Text
     """
     ## Tracking and leading
 
-Tracking controls the horizontal spacing between characters. Leading controls the vertical spacing between lines.
+    Tracking controls the horizontal spacing between characters. Leading controls the vertical spacing between lines.
     """.trimIndent()
 
     @Application
@@ -91,7 +90,7 @@ Tracking controls the horizontal spacing between characters. Leading controls th
     """
     ## Multiple fonts
 
-Tracking controls the horizontal spacing between characters. Leading controls the vertical spacing between lines.
+    Tracking controls the horizontal spacing between characters. Leading controls the vertical spacing between lines.
     """.trimIndent()
     @Media.Image "../media/writing-003.png"
 

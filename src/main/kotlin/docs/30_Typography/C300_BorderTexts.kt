@@ -1,5 +1,5 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Writing")
+@file:Title("Border texts")
 @file:ParentTitle("Typography")
 @file:Order("300")
 @file:URL("typography/borderText")
