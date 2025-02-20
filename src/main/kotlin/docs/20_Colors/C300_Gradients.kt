@@ -1,5 +1,5 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("HSV color")
+@file:Title("Gradients")
 @file:ParentTitle("Colors")
 @file:Order("300")
 @file:URL("colors/gradients")

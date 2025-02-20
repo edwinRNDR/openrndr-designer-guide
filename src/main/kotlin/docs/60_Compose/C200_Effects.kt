@@ -1,7 +1,7 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Effects")
 @file:ParentTitle("Compose")
-@file:Order("100")
+@file:Order("200")
 @file:URL("compose/effects")
 
 package docs.`60_Compose`

@@ -156,4 +156,92 @@ fun main() {
             }
         }
     }
+
+    @Text
+    """
+    ## Placing items inside a rectangle
+    
+    Using `Rectangle.position` we can place items inside a rectangle.
+    """.trimIndent()
+
+    @Media.Image "../media/rectangles-004.png"
+
+    @Application
+    @ProduceScreenshot("media/rectangles-004.png")
+    @Code
+    application {
+        configure {
+            width = 720
+            height = 720
+        }
+        program {
+            extend {
+                // create a rectangle from the center
+                val r = Rectangle.fromCenter(drawer.bounds.center, 300.0, 200.0)
+
+                // draw our base rectangle
+                drawer.fill = null
+                drawer.stroke = ColorRGBa.WHITE
+                drawer.rectangle(r)
+
+                // restore drawer
+                drawer.fill = ColorRGBa.WHITE
+                drawer.stroke = null
+
+                // draw a grid of circles inside the rectangle
+                val rows = 6
+                val columns = 9
+                for (j in 1 until rows) {
+                    for (i in 1 until columns) {
+                        val p = r.position( i.toDouble() / columns, j.toDouble() / rows)
+                        drawer.circle(p, 5.0)
+                    }
+                }
+            }
+        }
+    }
+
+    @Text
+    """
+    ## Placing items inside a rectangle
+    
+    Using `Rectangle.position` we can place items inside a rectangle.
+    """.trimIndent()
+
+    @Media.Image "../media/rectangles-004.png"
+
+    @Application
+    @ProduceScreenshot("media/rectangles-004.png")
+    @Code
+    application {
+        configure {
+            width = 720
+            height = 720
+        }
+        program {
+            extend {
+                // create a rectangle from the center
+                val r = Rectangle.fromCenter(drawer.bounds.center, 300.0, 200.0)
+
+                // draw our base rectangle
+                drawer.fill = null
+                drawer.stroke = ColorRGBa.WHITE
+                drawer.rectangle(r)
+
+                // restore drawer
+                drawer.fill = ColorRGBa.WHITE
+                drawer.stroke = null
+
+                // draw a grid of circles inside the rectangle
+                val rows = 6
+                val columns = 9
+                for (j in 1 until rows) {
+                    for (i in 1 until columns) {
+                        val p = r.position( i.toDouble() / columns, j.toDouble() / rows)
+                        drawer.circle(p, 5.0)
+                    }
+                }
+            }
+        }
+    }
 }

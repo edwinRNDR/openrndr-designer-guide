@@ -30,7 +30,7 @@ fun main() {
     
     """.trimIndent()
 
-    @Media.Image "../media/border-text-001.mp4"
+    @Media.Video "../media/border-text-001.mp4"
 
     @Application
     @ProduceVideo("media/border-text-001.mp4")
