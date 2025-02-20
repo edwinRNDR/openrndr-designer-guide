@@ -38,12 +38,22 @@ fun main() {
         }
         program {
             extend {
+                val r = Rectangle(40.0, 40.0, 300.0, 300.0)
+                drawer.fill = null
+                drawer.stroke = ColorRGBa.PINK
+
+                // preview the rectangle
+                drawer.rectangle(r)
+
+                drawer.fill = ColorRGBa.WHITE
 
                 // set the font
                 drawer.fontMap = loadFont("data/fonts/default.otf", 32.0)
                 writer {
-                    // set the box
-                    box = Rectangle(40.0, 40.0, 300.0, 300.0)
+                    // set the box to our previously created rectangle r
+                    // add some additional margins
+                    box = r.offsetEdges(-10.0)
+                    newLine()
                     text("Here is a text that should not be able to leave this box. Let's just ramble on for a bit. Ok then.")
                 }
             }

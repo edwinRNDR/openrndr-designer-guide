@@ -1,9 +1,9 @@
 @file:Suppress("UNUSED_EXPRESSION")
-@file:Title("Typography")
-@file:Order("1030")
-@file:URL("typography/index")
+@file:Title("Placing things")
+@file:Order("1040")
+@file:URL("placing-things/index")
 
-package docs.`30_Typography`
+package docs.`40_Placing_things`
 
 import org.openrndr.dokgen.annotations.*
 

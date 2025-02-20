@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Repeating things")
-@file:Order("1020")
+@file:Order("1010")
 @file:URL("repeating-things/index")
 
 package docs.`10_Repeating_things`
