@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Image treatments")
-@file:ParentTitle("images")
+@file:ParentTitle("Images")
 @file:Order("200")
 @file:URL("images/imageTreatments")
 
