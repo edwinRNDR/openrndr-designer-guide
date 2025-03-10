@@ -10,9 +10,9 @@ import org.openrndr.dokgen.annotations.*
 fun main() {
     @Text
     """
-    # Color
+    # Placing things
     
-    A quick overview of working with text in OPENRNDR.
+    How to place things on the screen, preferably without mathematics.
     
     """.trimIndent()
 }
