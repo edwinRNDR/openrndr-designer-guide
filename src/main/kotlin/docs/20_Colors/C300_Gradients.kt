@@ -109,12 +109,13 @@ fun main() {
     }
 
     @Text
-    """## Gradient units
-        Let's have a look at the gradient units. By default the gradients are defined in relative coordinates, 
-        these coordinates are relative to the bounds of the shapes drawn. This is best demonstrated by drawing multiple
-        shapes.
-        
-        In the image below we draw a grid of circles. Each circle has the gradient applied relative to its own bounds.
+    """
+    ## Gradient units
+    Let's have a look at the gradient units. By default the gradients are defined in relative coordinates, 
+    these coordinates are relative to the bounds of the shapes drawn. This is best demonstrated by drawing multiple
+    shapes.
+    
+    In the image below we draw a grid of circles. Each circle has the gradient applied relative to its own bounds.
                 
     """.trimIndent()
 
@@ -149,7 +150,8 @@ fun main() {
 
 
     @Text
-    """Alternatively we can can configure the gradient to be defined in world space units. We now
+    """
+    Alternatively we can can configure the gradient to be defined in world space units. We now
     define the `start` and `end` points relative to the world space (which coincides with the view space when the view is not adjusted).
     """.trimIndent()
 
@@ -365,7 +367,8 @@ fun main() {
     }
 
     @Text
-    """### Conic gradients
+    """
+    ### Conic gradients
     
     Conic gradients are created by setting the gradient type to `conic` in the gradient builder. Conic
     gradients have three properties that can be configured: `center`, `rotation` and `angle`.
@@ -403,7 +406,8 @@ fun main() {
     }
 
     @Text
-    """Let's vary the `rotation` of the conic gradient.
+    """
+    Let's vary the `rotation` of the conic gradient.
     """.trimIndent()
 
     @Media.Image "../media/gradients-002-d.png"
@@ -437,7 +441,8 @@ fun main() {
     }
 
     @Text
-    """Let's vary the `angle` of the conic gradient.
+    """
+    Let's vary the `angle` of the conic gradient.
     """.trimIndent()
 
     @Media.Image "../media/gradients-002-e.png"
@@ -471,7 +476,8 @@ fun main() {
     }
 
     @Text
-    """And finally let's vary the `center` of the conic gradient.
+    """
+    And finally let's vary the `center` of the conic gradient.
     """.trimIndent()
 
     @Media.Image "../media/gradients-002-f.png"
@@ -547,8 +553,8 @@ fun main() {
     }
 
     @Text
-    """Let's vary the `sides` horizontally and `sharpness` vertically of the stellar gradient.
-        
+    """
+    Let's vary the `sides` horizontally and `sharpness` vertically of the stellar gradient.
     """.trimIndent()
 
     @Media.Image "../media/gradients-002-h.png"
@@ -585,7 +591,8 @@ fun main() {
     }
 
     @Text
-    """### Elliptical gradients
+    """
+    ### Elliptical gradients
     
     Elliptical gradients are created by setting the gradient type to `elliptic` in the gradient builder. Elliptical gradients
     have `rotation`, `center`, `radiusX` and `radiusY` properties.
@@ -664,7 +671,8 @@ fun main() {
         }
     }
     @Text
-    """## Gradient spread method
+    """
+    ## Gradient spread method
     
     The spread method controls how the gradient is distributed across the area it covers. The available options are:
     `PAD`, `REFLECT`, `REPEAT`. The default is `PAD`.
@@ -712,11 +720,12 @@ fun main() {
     }
 
     @Text
-    """## Gradient quantization
+    """
+    ## Gradient quantization
+        
     
     We can quantize the output levels of the gradient by setting `quantization` to the desired number of
     quantization levels. The default is `0`.
-    
     """.trimIndent()
 
     @Media.Image "../media/gradients-002-l.png"
@@ -815,7 +824,8 @@ fun main() {
     }
 
     @Text
-    """### Demonstration 2
+    """
+    ### Demonstration 2
 
     This title screen is designed with a linear rainbow gradient in the background. The type is drawn
     with a similar but more vibrant gradient with quantization set to 32.
@@ -869,7 +879,8 @@ fun main() {
     }
 
     @Text
-    """### Demonstration 3
+    """
+    ### Demonstration 3
 
     This title screen is designed with a 4 sided stellar gradient in the background. The type is drawn
     with a similar gradient but with the color slightly offset.
@@ -934,7 +945,8 @@ fun main() {
     }
 
     @Text
-    """### Demonstration 4
+    """
+    ### Demonstration 4
 
     This title screen is made by drawing the text a 100 times. Each copy has a slightly different gradient,
     each copy uses different text alignment configuration.
