@@ -1,3 +1,9 @@
+@file:Suppress("UNUSED_EXPRESSION")
+@file:Title("Image treatments")
+@file:ParentTitle("images")
+@file:Order("200")
+@file:URL("images/imageTreatments")
+
 package docs.`50_Images`
 
 import org.openrndr.application
