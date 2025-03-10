@@ -147,10 +147,10 @@ fun main() {
     Text alignment is controlled by the `horizontalAlign` and `verticalAlign` properties.     
         
     """.trimIndent()
-    @Media.Image "../media/writing-003.png"
+    @Media.Image "../media/writing-004.png"
 
     @Application
-    @ProduceScreenshot("media/writing-003.png")
+    @ProduceScreenshot("media/writing-004.png")
     @Code
     application {
         configure {
