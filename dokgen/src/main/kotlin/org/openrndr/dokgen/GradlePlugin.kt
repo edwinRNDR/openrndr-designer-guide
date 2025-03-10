@@ -161,6 +161,7 @@ abstract class RunExamplesTask @Inject constructor(
         val workQueue: WorkQueue = workerExecutor.noIsolation()
 
         for (mainClass in execClasses) {
+            workQueue.await()
             workQueue.submit(MediaRunnerWorkAction::class.java) {
                 it.classPath.set(ss.runtimeClasspath.asPath)
                 it.jvmArgs.set(runnerConf?.jvmArgs ?: emptyList())

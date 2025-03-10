@@ -244,4 +244,10 @@ fun main() {
             }
         }
     }
+
+    @Media.Image "../media/rectangles-004.png"
+
+//    @Application
+//    @ProduceScreenshot("media/rectangles-004.png")
+//    @Code
 }

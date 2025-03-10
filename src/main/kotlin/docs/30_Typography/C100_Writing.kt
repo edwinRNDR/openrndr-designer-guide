@@ -11,6 +11,7 @@ import org.openrndr.color.ColorRGBa
 import org.openrndr.color.rgb
 import org.openrndr.dokgen.annotations.*
 import org.openrndr.draw.loadFont
+import org.openrndr.extra.shapes.primitives.grid
 import org.openrndr.extra.textwriter.writer
 import org.openrndr.shape.Rectangle
 
@@ -113,14 +114,11 @@ fun main() {
             height = 720
         }
         program {
-
             val large = loadFont("data/fonts/default.otf", 64.0)
             val medium = loadFont("data/fonts/default.otf", 32.0)
             val small = loadFont("data/fonts/default.otf", 16.0)
 
-
             extend {
-
                 // set the font
 
                 writer {
@@ -137,6 +135,45 @@ fun main() {
                     drawer.fontMap = small
                     text("I am a small sized font. so smol.")
                     newLine()
+                }
+            }
+        }
+    }
+
+    @Text
+    """
+    ## Text alignment  
+      
+    Text alignment is controlled by the `horizontalAlign` and `verticalAlign` properties.     
+        
+    """.trimIndent()
+    @Media.Image "../media/writing-003.png"
+
+    @Application
+    @ProduceScreenshot("media/writing-003.png")
+    @Code
+    application {
+        configure {
+            width = 720
+            height = 720
+        }
+        program {
+            val large = loadFont("data/fonts/default.otf", 32.0)
+
+            extend {
+                val grid = drawer.bounds.grid(3, 3, 10.0, 10.0, 10.0, 10.0)
+
+                for ((y, row) in grid.withIndex()) {
+                    for ((x, cell) in row.withIndex()) {
+                        writer {
+                            // set the box
+                            box = cell
+                            drawer.fontMap = large
+                            horizontalAlign = x / 2.0
+                            verticalAlign = y / 2.0
+                            text("($horizontalAlign, $verticalAlign)")
+                        }
+                    }
                 }
             }
         }
