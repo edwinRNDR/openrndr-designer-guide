@@ -28,14 +28,21 @@ ${body.prependIndent(" ".repeat(4))}
  * @param title A header to inject at the top of the document
  * @return A markdown document
  */
-fun renderDoc(doc: Doc, title: String? = null): String {
+
+fun renderDoc(state: State, title: String? = null): String {
+    val doc = state.doc
+
     val strDoc = doc.elements.fold("") { acc, el ->
         val str = when (el) {
             is Doc.Element.Code -> {
+
+                val imports = state.imports.joinToString("\n")
                 val code = if(el.value.startsWith("application"))
                     "fun main() = ${el.value}" else el.value
                 """
                  |```kotlin
+                 |$imports
+                 |
                  |$code
                  |```
                """.trimMargin()

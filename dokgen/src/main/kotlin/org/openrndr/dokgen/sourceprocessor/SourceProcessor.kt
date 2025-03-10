@@ -10,7 +10,7 @@ import java.io.File
 
 
 // the state of folding the syntax tree
-private data class State(
+data class State(
     val doc: Doc = Doc(),
     val applications: List<String> = listOf(),
     val applicationsForExport: List<String> = listOf(),
@@ -239,17 +239,8 @@ private class ProcessAnnotatedNode(
 
             "Code", "Code.Block" -> {
                 val mkDoc = { text: String ->
-                    doc.add(Doc.Element.Code(text)).let { doc ->
-                        Pair(maybeMkLink, state.inApplication).map2 { mkLink, _ ->
-                            val appCount = state.applications.size
-                            val link = mkLink(appCount - 1)
-                            doc.add(
-                                Doc.Element.Markdown("""
-                                                [Link to the full example]($link)
-                                            """.trimIndent())
-                            )
-                        } ?: doc
-                    }
+                    doc.add(Doc.Element.Code(text))
+
                 }
                 val text = when (annotationName) {
                     "Code" -> {
@@ -450,7 +441,7 @@ object SourceProcessor {
         val runnablePackageDirective = examplesPackageDirective(
             File(fileAnns["URL"]!!).parentFile.toPath()
         )
-        val renderedDoc = renderDoc(result.doc).removeGarbage()
+        val renderedDoc = renderDoc(result).removeGarbage()
         val appSourcesProducingMedia = result.applications.map {
             appTemplate(
                 runnablePackageDirective,
