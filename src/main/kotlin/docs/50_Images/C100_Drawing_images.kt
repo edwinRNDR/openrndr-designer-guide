@@ -297,10 +297,10 @@ fun main() {
     ## Drawing parts of images 
                 
     """.trimIndent()
-    @Media.Image "../media/image-drawing-0090.png"
+    @Media.Image "../media/image-drawing-0085.png"
 
     @Application
-    @ProduceScreenshot("media/image-drawing-0090.png")
+    @ProduceScreenshot("media/image-drawing-0085.png")
     @Code
     application {
         configure {
