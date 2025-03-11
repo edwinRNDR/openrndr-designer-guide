@@ -4,19 +4,15 @@
 @file:Order("100")
 @file:URL("compose/layeredGraphics")
 
-package docs.`60_Compose`
+package docs.`80_Compose`
 
 import org.openrndr.application
 import org.openrndr.color.ColorRGBa
-import org.openrndr.color.rgb
 import org.openrndr.dokgen.annotations.*
-import org.openrndr.draw.loadFont
 import org.openrndr.extra.compositor.*
 import org.openrndr.extra.fx.blend.Multiply
 import org.openrndr.extra.fx.patterns.Checkers
-import org.openrndr.extra.textwriter.writer
 import org.openrndr.math.Vector2
-import org.openrndr.shape.Rectangle
 
 
 fun main() {

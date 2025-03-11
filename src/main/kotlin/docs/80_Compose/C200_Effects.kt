@@ -4,23 +4,18 @@
 @file:Order("200")
 @file:URL("compose/effects")
 
-package docs.`60_Compose`
+package docs.`80_Compose`
 
 import org.openrndr.application
 import org.openrndr.color.ColorRGBa
-import org.openrndr.color.rgb
 import org.openrndr.dokgen.annotations.*
 import org.openrndr.draw.loadFont
 import org.openrndr.draw.loadImage
 import org.openrndr.extra.compositor.*
-import org.openrndr.extra.fx.blend.Multiply
 import org.openrndr.extra.fx.blur.ApproximateGaussianBlur
 import org.openrndr.extra.fx.distort.Perturb
-import org.openrndr.extra.fx.patterns.Checkers
+import org.openrndr.extra.fx.dither.CMYKHalftone
 import org.openrndr.extra.imageFit.imageFit
-import org.openrndr.extra.textwriter.writer
-import org.openrndr.math.Vector2
-import org.openrndr.shape.Rectangle
 
 
 fun main() {
@@ -173,4 +168,48 @@ fun main() {
             }
         }
     }
+
+    @Text
+    """
+    ## CMYK Halftone
+
+    This effect will only work well with a light (or white) background.
+
+    """.trimIndent()
+
+    @Media.Image "../media/effects-004.png"
+
+    @Application
+    @ProduceScreenshot("media/effects-004.png")
+    @Code
+
+    application {
+        configure {
+            width = 720
+            height = 960
+        }
+        program {
+            val c = compose {
+                layer {
+                    draw {
+                        drawer.clear(ColorRGBa.WHITE)
+                    }
+                    layer {
+                        val image = loadImage("data/images/cheeta.jpg")
+                        draw {
+                            drawer.imageFit(image, drawer.bounds)
+                        }
+
+                        post(CMYKHalftone()) {
+                            this.scale = 20.0
+                        }
+                    }
+                }
+            }
+            extend {
+                c.draw(drawer)
+            }
+        }
+    }
+
 }

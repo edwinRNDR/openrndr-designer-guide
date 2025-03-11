@@ -1,9 +1,9 @@
 @file:Suppress("UNUSED_EXPRESSION")
 @file:Title("Compose")
-@file:Order("1060")
+@file:Order("1080")
 @file:URL("compose/index")
 
-package docs.`60_Compose`
+package docs.`80_Compose`
 
 import org.openrndr.dokgen.annotations.*
 
