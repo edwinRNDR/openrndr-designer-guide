@@ -31,7 +31,7 @@ fun main() {
     """
     @Media.Image "../media/var-and-vals-001.jpg"
     @Application
-    @ProduceScreenshot("media/coordinate-system-001.jpg")
+    @ProduceScreenshot("media/var-and-vals-001.jpg")
     @Code
     application {
         configure {
@@ -56,7 +56,7 @@ fun main() {
     """
     @Media.Image "../media/var-and-vals-002.jpg"
     @Application
-    @ProduceScreenshot("media/coordinate-system-002.jpg")
+    @ProduceScreenshot("media/var-and-vals-002.jpg")
     @Code
     application {
         configure {

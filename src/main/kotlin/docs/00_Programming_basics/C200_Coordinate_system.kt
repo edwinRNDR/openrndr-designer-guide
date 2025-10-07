@@ -42,6 +42,7 @@ fun main() {
         }
     }
 
+    @Text
     """
     Now let's draw circles at the other corners.        
     """
@@ -65,6 +66,7 @@ fun main() {
         }
     }
 
+    @Text
     """
     So we have learned that top-left is at (0.0, 0.0), top-right at (720.0, 0.0), bottom-right at (720.0, 720.0)
     and bottom-left at (0.0, 720.0).

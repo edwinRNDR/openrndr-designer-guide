@@ -62,6 +62,7 @@ fun main() {
         }
     }
 
+    @Text
     """
     ## If-else statements        
     """
