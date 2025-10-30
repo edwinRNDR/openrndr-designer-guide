@@ -25,15 +25,18 @@ fun main() {
     
     Here we will go over the basic structure of a OPENRNDR program. The most minimal program looks as follows.
     
+    """
 
-    ```kotlin
+    @Application
+    @Code
+    @ProduceScreenshot("media/programming-basics-000.jpg")
     application {
         program {
 
         }
     }
-    ```
-    """
+
+
     @Text
     """
     You can go ahead and create a new file called Instruction01.kt in the src/main/kotlin folder. 
@@ -51,7 +54,12 @@ fun main() {
                     
     Let's change our program a tiny bit. We want to change the window size to be larger.
 
-    ```kotlin
+    """
+
+    @Application
+    @Code
+    @ProduceScreenshot("media/programming-basics-000.jpg")
+
     application {
         configure {
             width = 720
@@ -61,8 +69,6 @@ fun main() {
 
         }
     }
-    ```
-    """
 
     @Text
     """

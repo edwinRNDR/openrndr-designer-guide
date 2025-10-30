@@ -1,0 +1,211 @@
+@file:Suppress("UNUSED_EXPRESSION")
+@file:Title("Typographic grids")
+@file:ParentTitle("Typography")
+@file:Order("110")
+@file:URL("typography/typographic-grids")
+
+package docs.`30_Typography`
+
+import org.openrndr.application
+import org.openrndr.color.ColorRGBa
+import org.openrndr.dokgen.annotations.*
+import org.openrndr.draw.isolated
+import org.openrndr.draw.loadFont
+import org.openrndr.extra.shapes.primitives.grid
+import org.openrndr.extra.shapes.primitives.row
+import org.openrndr.extra.textwriter.writer
+import org.openrndr.shape.Rectangle
+import org.openrndr.shape.bounds
+import kotlin.math.PI
+import kotlin.math.cos
+
+
+fun main() {
+    @Text
+    """
+    # Typographic grids
+    """
+
+    @Text
+    """
+    ## Text in a box
+    """.trimIndent()
+
+    @Media.Image "../media/type-grids-001.png"
+
+    @Application
+    @ProduceScreenshot("media/type-grids-001.png")
+    @Code
+    application {
+        configure {
+            width = 720
+            height = 720
+        }
+        program {
+            extend {
+                val r = Rectangle(40.0, 40.0, 300.0, 300.0)
+                drawer.fill = null
+                drawer.stroke = ColorRGBa.PINK
+
+                // preview the rectangle
+                drawer.rectangle(r)
+
+                drawer.fill = ColorRGBa.WHITE
+
+                // set the font
+                drawer.fontMap = loadFont("data/fonts/default.otf", 32.0)
+                writer {
+                    // set the box to our previously created rectangle r
+                    // add some additional margins
+                    box = r.offsetEdges(-10.0)
+                    horizontalAlign = 0.0
+                    verticalAlign = 0.0
+                    text("Here is a text inside a box.")
+                }
+            }
+        }
+    }
+
+    @Text
+    """
+    ## Text in a grid of boxes
+    """.trimIndent()
+
+    @Media.Image "../media/type-grids-002.png"
+
+    @Application
+    @ProduceScreenshot("media/type-grids-002.png")
+    @Code
+    application {
+        configure {
+            width = 720
+            height = 720
+        }
+        program {
+            extend {
+                // create a 2 by 3 grid of rectangles, with gutters of 10.0 pixels
+                val grid = drawer.bounds.grid(2, 3, gutterX = 10.0, gutterY = 10.0)
+
+                // iterate over all cells in the grid, note that the grid is flattened to a list first
+                for (cell in grid.flatten()) {
+
+                    // draw a rectangle around the cell
+                    drawer.isolated {
+                        drawer.fill = null
+                        drawer.stroke = ColorRGBa.PINK
+                        drawer.rectangle(cell)
+                    }
+
+                    drawer.fill = ColorRGBa.WHITE
+
+                    // set the font
+                    drawer.fontMap = loadFont("data/fonts/default.otf", 32.0)
+                    writer {
+                        // set the box to cell
+                        box = cell
+                        horizontalAlign = 0.5
+                        verticalAlign = 0.5
+                        text("Cell text")
+                    }
+                }
+            }
+        }
+    }
+
+    @Text
+    """
+    ## Varying typograhic styles
+    """.trimIndent()
+
+    @Media.Image "../media/type-grids-003.png"
+
+    @Application
+    @ProduceScreenshot("media/type-grids-003.png")
+    @Code
+    application {
+        configure {
+            width = 720
+            height = 720
+        }
+        program {
+            extend {
+                // create a 2 by 3 grid of rectangles, with gutters of 10.0 pixels
+                val grid = drawer.bounds.grid(3, 3, gutterX = 10.0, gutterY = 10.0)
+
+                // iterate over all cells in the grid, note that the grid is flattened to a list first
+                // here we also use `.withIndex()` to get an index along with the cell
+                for ((index, cell) in grid.flatten().withIndex()) {
+
+                    // draw a rectangle around the cell
+                    drawer.isolated {
+                        drawer.fill = null
+                        drawer.stroke = ColorRGBa.PINK
+                        drawer.rectangle(cell)
+                    }
+
+                    drawer.fill = ColorRGBa.WHITE
+
+                    // set the font
+                    drawer.fontMap = loadFont("data/fonts/default.otf", 32.0)
+                    writer {
+                        // set the box to cell
+                        box = cell
+                        tracking = cos(seconds * 0.5 + (index.toDouble() / grid.size) * PI * 1.0) * 10.0
+                        horizontalAlign = 0.5
+                        verticalAlign = 0.5
+                        text("Cell text")
+                    }
+                }
+            }
+        }
+    }
+    @Text
+    """
+    ## Varying typograhic styles
+    """.trimIndent()
+
+    @Media.Image "../media/type-grids-004.png"
+
+    @Application
+    @ProduceScreenshot("media/type-grids-004.png")
+    @Code
+    application {
+        configure {
+            width = 720
+            height = 720
+        }
+        program {
+            extend {
+                // create a 2 by 3 grid of rectangles, with gutters and margins of 10.0 pixels
+                val baseGrid = drawer.bounds.grid(2, 2, gutterX = 10.0, gutterY = 10.0, marginX = 10.0, marginY = 10.0)
+
+                // create a head cell by taking the first row and finding its bounds
+                val headCell = baseGrid.row(0).bounds
+
+                // create a list of body cells by taking the second row
+                val bodyCells = baseGrid.row(1)
+
+                drawer.fontMap = loadFont("data/fonts/default.otf", 128.0)
+                drawer.fill = ColorRGBa.WHITE
+                writer {
+                    horizontalAlign = 0.5
+                    verticalAlign = 0.5
+                    box = headCell
+                    text("This is a heading")
+                }
+
+                drawer.fontMap = loadFont("data/fonts/default.otf", 16.0)
+                drawer.fill = ColorRGBa.WHITE
+                for ((i, cell) in bodyCells.withIndex()) {
+                    writer {
+                        horizontalAlign = i.toDouble() / (bodyCells.size - 1.0)
+                        verticalAlign = 0.0
+
+                        box = cell
+                        text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+                    }
+                }
+            }
+        }
+    }
+}
