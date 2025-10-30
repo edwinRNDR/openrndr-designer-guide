@@ -2,7 +2,7 @@
 @file:Title("Typographic grids")
 @file:ParentTitle("Typography")
 @file:Order("110")
-@file:URL("typography/typographic-grids")
+@file:URL("typography/typographicgrids")
 
 package docs.`30_Typography`
 
